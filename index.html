@@ -1,0 +1,94 @@
+
+
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <title>UIUC RP Logo</title>
+        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+        <link type="text/css" href="rplogo.css" rel="stylesheet">
+        <script type="text/javascript" src="http://code.jquery.com/jquery-1.7.2.min.js"></script>
+		<script type="text/javascript" src="http://documentcloud.github.com/underscore/underscore-min.js"></script>
+
+        <script type="text/javascript">
+		$(function(){ 
+
+		    _.templateSettings.variable = "rc";
+
+		    // Grab the HTML out of our template tag and pre-compile it.
+		    var template = _.template(
+		        $( "script.printed_i" ).html()
+		    );
+
+		    // Render the underscore template and inject it
+		    // in our current DOM.
+		    $( ".printed" ).html(
+		        template()
+		    );
+
+		});
+        </script>
+
+    </head>
+    <body>
+    <div class="container">
+    	<div class="new_logo_wrapper">
+	    	<div class="new_logo">
+	    		<div class="printer_head_container">
+	    			<div class="first_bend">
+	    			</div>
+	    			<div class="printer_head">
+	    				<div class="box1"></div>
+	    				<div class="box2"></div>
+	    				<div class="tri1"></div>
+	    			</div>
+	    		</div>
+				<div class="logo_container">
+					<div class="printed_container">
+						<div class="printed">
+						</div>
+						<script type="text/template" class="printed_i">
+							<% 
+								// 4px Height
+								var  printStrips = [
+									[1,100], 
+									[1, 70], 
+									[15,45], 
+									[1, 55], 
+									[1, 85], 
+									[1,108] 
+								]
+								_.each( printStrips, function( a, i){ 
+									printStrips = Array.apply(null, Array(a[0])).map(Number.prototype.valueOf,a[1]);
+									_.each( printStrips, function( strip_length, i){
+									console.log(printStrips)
+							%>
+					                <div class="print_strip" >
+					                	<div class="bend_back">
+					                	</div>
+					                	<div class="bend_out" style="width:<%=strip_length%>px">
+					                	</div>
+					                </div>
+					                
+					        <% 
+					        		}); 
+					    		}); 
+					    	%>
+					    	<div class="print_strip" >
+			                	<div class="bend_back">
+			                	</div>
+			                	<div class="last_bend">
+			                	</div>
+			                </div>
+						</script>
+					</div>
+					<div class="orig_container">
+						<div class="orig_logo">
+							<img class="logo" src="UofI.png"></img>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+    </body>
+</html>
