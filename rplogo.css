@@ -2,6 +2,18 @@
 .container{
 }
 
+.new_logo_wrapper:hover .printer_head_container{
+	left: 90px;
+	-webkit-transition: left 2s; /* Safari */
+	transition: left 2s;
+}
+
+.new_logo_wrapper:hover .first_bend{
+	width: 100px;
+	-webkit-transition: width 2s; /* Safari */
+	transition: width 2s;
+}
+
 .new_logo_wrapper{
 	position: relative;
 
@@ -36,17 +48,23 @@
 	top: 52px;
 	left: 33px;
 	height: 37px;
-	width: 100px;
+	width: 15px;
 	border-radius: 0 0 0 20px;
 	border: solid 4px white;
 	border-top-width: 0px;
 	border-right-width: 0px;
+
+	-webkit-transition: width 2s; /* Safari */
+	transition: width 2s;
 }
 
 .printer_head_container{
 	position: absolute;
 	top: 20px;
-	left: 90px;
+	left: 170px;
+
+	-webkit-transition: left 2s; /* Safari */
+	transition: left 2s;
 }
 
 .printer_head{
